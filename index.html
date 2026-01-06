@@ -1,11 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Our Team</title>
+  <style>
+    :root {
+      --bg: #1e2124;
+      --text: #424549;
+      --muted: #424549;
+      --accent: #7289da;
+      --card: #282b30;
+      --border: #424549;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2rem;
+      letter-spacing: 0.2px;
+    }
+
+    header p {
+      margin: 0 auto;
+      max-width: 700px;
+      color: var(--muted);
+    }
+
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .member {
+      flex: 0 0 calc(33.333% - 1.25rem);
+      max-width: calc(33.333% - 1.25rem);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .member .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      user-select: none;
+    }
+
+    .member h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.125rem;
+    }
+
+    .member .role {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .member p {
+      margin: 0 0 0.75rem;
+    }
+
+    .member .links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .idea {
+      margin-top: 2rem;
+      padding: 1.75rem 2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .idea h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .idea .intro {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .feature {
+      flex: 1 1 300px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .button {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .button.accent {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 1rem;
+      display: inline-block;
+    }
+  </style>
 </head>
+
 <body>
-    
+  <header>
+    <div class="container">
+      <h1>Cybersecurity and Technology</h1>
+      <p class="tagline">Tagline</p>
+      <p>Technology connects us, creating pathways to independence and keeping us safe. Current challenges in the
+        cyber-technology and security arena impact how computer-based equipment, information, networks, and services are
+        protected from unauthorized access, change, or destruction.<br>This category challenges you to develop products
+        that safeguard these processes and protect humanity from unplanned events and natural disasters. Unleash your
+        ingenuity and create powerful innovations in information technology and security for computing devices and
+        networks. Be part of the tech revolution!
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section aria-label="Our Idea" class="idea">
+      <div class="container">
+        <h2>Idea</h2>
+        <p class="intro">
+          Idea Description
+        </p>
+
+        <div class="features">
+          <article class="feature">
+            <h3>Idea Features</h3>
+            <p>Feature Description</p>
+          </article>
+          <article class="feature">
+            <h3>Idea Features</h3>
+            <p>Feature Description</p>
+          </article>
+          <article class="feature">
+            <h3>Idea Features</h3>
+            <p>Feature Description</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section aria-label="Questions and Answers" class="qa">
+      <h2>Questions & Answers</h2>
+      <div class="qa-item">
+        <h3>Q:</h3>
+        <p>A:</p>
+      </div>
+      <div class="qa-item">
+        <h3>Q:</h3>
+        <p>A:</p>
+      </div>
+      <div class="qa-item">
+        <h3>Q:</h3>
+        <p>A:</p>
+      </div>
+    </section>
+    <section aria-label="Team members">
+      <div class="team">
+        <article class="member">
+          <div class="avatar" aria-hidden="true">PH</div>
+          <h3>Name</h3>
+          <p class="role">Role</p>
+          <p>
+            Description
+          </p>
+        </article>
+
+        <article class="member">
+          <div class="avatar" aria-hidden="true">PH</div>
+          <h3>Name</h3>
+          <p class="role">Role</p>
+          <p>
+            Description
+          </p>
+        </article>
+
+        <article class="member">
+          <div class="avatar" aria-hidden="true">PH</div>
+          <h3>Name</h3>
+          <p class="role">Role</p>
+          <p>
+            Description
+          </p>
+        </article>
+
+        <article class="member">
+          <div class="avatar" aria-hidden="true">PH</div>
+          <h3>Name</h3>
+          <p class="role">Role</p>
+          <p>
+            Description
+          </p>
+        </article>
+
+        <article class="member">
+          <div class="avatar" aria-hidden="true">PH</div>
+          <h3>Name</h3>
+          <p class="role">Role</p>
+          <p>
+            Description
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>Whatever is needed here</p>
+    </div>
+  </footer>
 </body>
+
 </html>
