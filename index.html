@@ -144,13 +144,15 @@
 
     .features {
       display: flex;
+      flex-direction: column;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
     }
 
     .feature {
-      flex: 1 1 300px;
+      flex: unset;
+      width: 100%;
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 8px;
