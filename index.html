@@ -5,14 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Our Team</title>
+
   <style>
     :root {
-      --bg: #1e2124;
-      --text: #424549;
-      --muted: #424549;
-      --accent: #7289da;
-      --card: #282b30;
-      --border: #424549;
+      --bg: #0f1115;
+      --card: #1b1f27;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #4f7cff;
+      --accent-2: #22d3ee;
+      --border: #2a2f3a;
     }
 
     * {
@@ -49,14 +51,17 @@
 
     header h1 {
       margin: 0 0 0.5rem;
-      font-size: 2rem;
-      letter-spacing: 0.2px;
+      font-size: 2.2rem;
+      color: #ffffff;
+      letter-spacing: 0.5px;
     }
 
-    header p {
-      margin: 0 auto;
-      max-width: 700px;
-      color: var(--muted);
+    .tagline {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 1rem;
+      display: inline-block;
     }
 
     .team {
@@ -74,18 +79,24 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1.25rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .member:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(79, 124, 255, 0.15);
     }
 
     .member .avatar {
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      background: #e2e8f0;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      color: var(--accent);
+      color: #ffffff;
       margin-bottom: 0.75rem;
       user-select: none;
     }
@@ -93,6 +104,7 @@
     .member h3 {
       margin: 0 0 0.25rem;
       font-size: 1.125rem;
+      color: #ffffff;
     }
 
     .member .role {
@@ -101,29 +113,9 @@
       font-size: 0.95rem;
     }
 
-    .member p {
-      margin: 0 0 0.75rem;
-    }
-
-    .member .links {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-top: 0.5rem;
-    }
-
-    footer {
-      margin-top: 3rem;
-      padding: 2rem 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.95rem;
-    }
-
     .idea {
       margin-top: 2rem;
-      padding: 1.75rem 2rem;
+      padding: 2rem;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -133,6 +125,7 @@
       font-size: 1.75rem;
       margin-bottom: 1rem;
       text-align: center;
+      color: var(--accent);
     }
 
     .idea .intro {
@@ -145,42 +138,21 @@
     .features {
       display: flex;
       flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 2rem;
     }
 
     .feature {
-      flex: unset;
       width: 100%;
-      background: #ffffff;
+      background: linear-gradient(145deg, #1f2937, #111827);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem;
+      border-radius: 10px;
+      padding: 1.25rem;
       text-align: center;
     }
 
-    .button {
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: #ffffff;
-      color: var(--accent);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .button.accent {
-      background: var(--accent);
-      color: #ffffff;
-    }
-
-    .tagline {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin: 0 0 1rem;
-      display: inline-block;
+    .feature h3 {
+      color: var(--accent-2);
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -194,73 +166,66 @@
   </header>
 
   <main class="container">
-    <section aria-label="Our Idea" class="idea">
-      <div class="container">
-        <h2>Surveillance Program Of Threats</h2>
-        <p class="intro">
-          
-        </p>
-        <div class="features">
-          <article class="feature">
-            <h3>The Problem</h3>
-            <p>Many errors in diesel generators, which are used by people and organizations in countries without stable energy systems, lead to fuel and financial waste. Additionally, these generators are susceptible to damage from natural disasters, which leads to further economic strain.</p>
-          </article>
-          <article class="feature">
-            <h3>Our Solution</h3>
-            <p>Feature Description</p>
-          </article>
-          <article class="feature">
-            <h3>Intended Impact</h3>
-            <p>Feature Description</p>
-          </article>
-        </div>
+    <section class="idea">
+      <h2>Surveillance Program Of Threats</h2>
+
+      <div class="features">
+        <article class="feature">
+          <h3>The Problem</h3>
+          <p>
+            Many errors in diesel generators used in unstable energy regions lead to fuel waste,
+            financial loss, and vulnerability to natural disasters.
+          </p>
+        </article>
+
+        <article class="feature">
+          <h3>Our Solution</h3>
+          <p>
+            Intelligent monitoring and predictive analysis to detect failures before they happen.
+          </p>
+        </article>
+
+        <article class="feature">
+          <h3>Intended Impact</h3>
+          <p>
+            Reduced fuel waste, lower repair costs, and improved energy reliability.
+          </p>
+        </article>
       </div>
     </section>
-    <section aria-label="Team members">
+
+    <section>
       <div class="team">
         <article class="member">
-          <div class="avatar" aria-hidden="true">PH</div>
+          <div class="avatar">WK</div>
           <h3>William Kwan</h3>
           <p class="role">Leader, Programmer</p>
-          <p>
-            Leader of the project and trained the model of AI used in our innovation.
-          </p>
+          <p>Leader of the project and trained the AI model used in our innovation.</p>
         </article>
 
         <article class="member">
-          <div class="avatar" aria-hidden="true">PH</div>
+          <div class="avatar">C</div>
           <h3>Chase</h3>
           <p class="role">Concept Developer</p>
-          <p>
-            
-          </p>
         </article>
 
         <article class="member">
-          <div class="avatar" aria-hidden="true">PH</div>
+          <div class="avatar">L</div>
           <h3>Lucas</h3>
           <p class="role">Concept Developer</p>
-          <p>
-            
-          </p>
         </article>
 
         <article class="member">
-          <div class="avatar" aria-hidden="true">PH</div>
+          <div class="avatar">R</div>
           <h3>Ryan</h3>
           <p class="role">Concept Developer</p>
-          <p>
-            
-          </p>
         </article>
 
         <article class="member">
-          <div class="avatar" aria-hidden="true">PH</div>
+          <div class="avatar">LO</div>
           <h3>Leo Ouyang</h3>
           <p class="role">Concept Developer, Website Designer</p>
-          <p>
-            Helped throw in some ideas when we were coming up with our innovation; Created the website.
-          </p>
+          <p>Helped with ideation and built the website.</p>
         </article>
       </div>
     </section>
