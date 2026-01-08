@@ -154,6 +154,31 @@
       color: var(--accent-2);
       margin-bottom: 0.5rem;
     }
+
+        .scroll-wrapper {
+      overflow: hidden;
+    }
+
+    .scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      will-change: opacity, transform;
+    }
+
+    .scroll-top {
+      transform: translateY(-40px);
+    }
+
+    .scroll-bottom {
+      transform: translateY(40px);
+    }
+
+    .scroll.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
   </style>
 </head>
 
@@ -230,6 +255,29 @@
       </div>
     </section>
   </main>
+    <script>
+    document.querySelectorAll("main > section").forEach(section => {
+      !section.parentElement.classList.contains("scroll-wrapper") &&
+        section.parentNode.insertBefore(
+          Object.assign(document.createElement("div"), { className: "scroll-wrapper" }),
+          section
+        ).appendChild(section);
+    });
+    document.querySelectorAll("section h2, section article").forEach(el => el.classList.add("scroll"));
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const el = entry.target;
+          el.classList.remove("scroll-top", "scroll-bottom");
+          el.classList.add(window.scrollY > (el.dataset.lastScroll || 0) ? "scroll-bottom" : "scroll-top");
+          el.dataset.lastScroll = window.scrollY;
+          entry.isIntersecting ? el.classList.add("show") : el.classList.remove("show");
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll(".scroll").forEach(el => observer.observe(el));
+  </script>
 </body>
 
 </html>
