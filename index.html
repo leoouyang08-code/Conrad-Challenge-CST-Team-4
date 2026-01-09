@@ -72,14 +72,21 @@
       margin-top: 2rem;
     }
 
-    .member {
-      flex: 0 0 calc(33.333% - 1.25rem);
-      max-width: calc(33.333% - 1.25rem);
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .member .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .member .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .member:hover {
@@ -206,14 +213,14 @@
         <article class="feature">
           <h3>Our Solution</h3>
           <p>
-            
+            Our system uses machine learning to protect diesel generators in regions prone to natural disasters by analyzing real-time weather and meteorological data. This enables communities to predict disasters earlier, prepare effectively, and prevent generator failures.
           </p>
         </article>
 
         <article class="feature">
           <h3>Intended Impact</h3>
           <p>
-            
+            Our product will revolutionize the energy market as our automatic adjustment system for generators will become fuel efficient as it adjusts to the weather. 
           </p>
         </article>
       </div>
