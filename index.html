@@ -64,60 +64,6 @@
       display: inline-block;
     }
 
-    .team {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-
-    .member {
-      flex: 0 1 288px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.25rem;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .member:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(79, 124, 255, 0.15);
-    }
-
-    .member .avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      margin-bottom: 0.75rem;
-      user-select: none;
-    }
-
-    .member .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .member h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1.125rem;
-      color: #fff;
-    }
-
-    .member .role {
-      margin: 0 0 0.75rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
     .idea {
       margin-top: 2rem;
       padding: 2rem;
@@ -175,7 +121,109 @@
       opacity: 1;
       transform: translateY(0);
     }
-    
+
+    .team-carousel {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 3rem;
+      overflow: hidden;
+      margin-top: 2rem;
+      background: var(--card);
+    }
+
+    .team-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 100%;
+    }
+
+    .team-page {
+      flex: 0 0 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      justify-content: center;
+    }
+
+    .team-page img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .member {
+      flex: 0 1 320px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .member:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(79, 124, 255, 0.15);
+    }
+
+    .member .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+      user-select: none;
+    }
+
+    .member .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .member h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.125rem;
+      color: #fff;
+    }
+
+    .member .role {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 8px;
+      z-index: 10;
+    }
+
+    .arrow.left {
+      left: 0.5rem;
+    }
+
+    .arrow.right {
+      right: 0.5rem;
+    }
+
+    .arrow:hover {
+      background: var(--accent-2);
+    }
   </style>
 </head>
 
@@ -190,86 +238,76 @@
   <main class="container">
     <section class="idea">
       <h2>Surveillance Program Of Threats</h2>
-
       <div class="features">
         <article class="feature">
           <h3>The Problem</h3>
-          <p>
-            Many errors in diesel generators used in unstable energy regions lead to fuel waste,
-            financial loss, and vulnerability to natural disasters.
-          </p>
+          <p>Many errors in diesel generators used in unstable energy regions lead to fuel waste, financial loss, and
+            vulnerability to natural disasters.</p>
         </article>
-
         <article class="feature">
           <h3>Our Solution</h3>
-          <p>
-            Our system uses machine learning to protect diesel generators in regions prone to natural disasters by analyzing real-time weather and meteorological data. This enables communities to predict disasters earlier, prepare effectively, and prevent generator failures.
-          </p>
+          <p>Our system uses machine learning to protect diesel generators in regions prone to natural disasters by
+            analyzing real-time weather and meteorological data.</p>
         </article>
-
         <article class="feature">
           <h3>Intended Impact</h3>
-          <p>
-            Our product will revolutionize the energy market as our automatic adjustment system for generators will become fuel efficient as it adjusts to the weather. 
-          </p>
+          <p>Our product will revolutionize the energy market as our automatic adjustment system for generators will
+            become fuel efficient as it adjusts to the weather.</p>
         </article>
       </div>
     </section>
 
     <section>
-      <div class="team">
-        <article class="member">
-          <div class="avatar">
-            <img src="Will2.jpg"/>
+      <div class="team-carousel">
+        <button class="arrow left">&#8592;</button>
+        <div class="team-wrapper">
+          <div class="team-page">
+            <article class="member">
+              <div class="avatar"><img src="Will2.jpg" /></div>
+              <h3>William Kwan</h3>
+              <p class="role">Leader, Programmer</p>
+              <p>Leader of the project and trained the AI model used in our innovation.</p>
+            </article>
+            <article class="member">
+              <div class="avatar"><img src="Chase2.jpg" /></div>
+              <h3>Chase Li</h3>
+              <p class="role">Concept Developer</p>
+              <p>Compared our innovation to those that already exist and helped move it in the right direction.</p>
+            </article>
+            <article class="member">
+              <div class="avatar"><img src="Lucas2.jpg" /></div>
+              <h3>Lucas Cho</h3>
+              <p class="role">Concept Developer</p>
+              <p>Provided vital feedback during our planning phase to ensure our project went smoothly.</p>
+            </article>
+            <article class="member">
+              <div class="avatar"><img src="Ryan2.jpg" /></div>
+              <h3>Ryan Liu</h3>
+              <p class="role">Concept Developer</p>
+              <p>Thought of innumerable ideas that the team would use in the innovation</p>
+            </article>
+            <article class="member">
+              <div class="avatar"><img src="link" /></div>
+              <h3>Leo Ouyang</h3>
+              <p class="role">Concept Developer, Website Designer</p>
+              <p>Helped with ideation and built the website.</p>
+            </article>
           </div>
-          <h3>William Kwan</h3>
-          <p class="role">Leader, Programmer</p>
-          <p>Leader of the project and trained the AI model used in our innovation.</p>
-        </article>
 
-        <article class="member">
-          <div class="avatar">
-            <img src="Chase2.jpg"/>
+          <div class="team-page">
+            <img src="team_photo.jpg" alt="Our Team" />
           </div>
-          <h3>Chase Li</h3>
-          <p class="role">Concept Developer</p>
-          <p>Compared our innovation to those that already exist and helped move it in the right direction.</p>
-        </article>
-
-        <article class="member">
-          <div class="avatar">
-            <img src="Lucas2.jpg"/>
-          </div>
-          <h3>Lucas Cho</h3>
-          <p class="role">Concept Developer</p>
-          <p>Provided vital feedback during our planning phase to ensure our project went smoothly.</p>
-        </article>
-
-        <article class="member">
-          <div class="avatar">
-            <img src="Ryan2.jpg"/>
-          </div>
-          <h3>Ryan Liu</h3>
-          <p class="role">Concept Developer</p>
-          <p>Thought of innumerable ideas that the team would use in the innovation</p>
-        </article>
-
-        <article class="member">
-          <div class="avatar">
-            <img src="link"/>
-          </div>
-          <h3>Leo Ouyang</h3>
-          <p class="role">Concept Developer, Website Designer</p>
-          <p>Helped with ideation and built the website.</p>
-        </article>
+        </div>
+        <button class="arrow right">&#8594;</button>
       </div>
     </section>
   </main>
-    <script>
+
+  <script>
     document.querySelectorAll("main > section").forEach(section => {
       !section.parentElement.classList.contains("scroll-wrapper") &&
         section.parentNode.insertBefore(
-          Object.assign(document.createElement("div"), { className: "scroll-wrapper" }),
+          Object.assign(document.createElement("div"), {className: "scroll-wrapper"}),
           section
         ).appendChild(section);
     });
@@ -284,9 +322,23 @@
           entry.isIntersecting ? el.classList.add("show") : el.classList.remove("show");
         });
       },
-      { threshold: 0.15 }
+      {threshold: 0.15}
     );
     document.querySelectorAll(".scroll").forEach(el => observer.observe(el));
+
+    const wrapper = document.querySelector(".team-wrapper");
+    const pages = document.querySelectorAll(".team-page");
+    let current = 0;
+
+    function showPage(index) {
+      if (index < 0) index = pages.length - 1;
+      if (index >= pages.length) index = 0;
+      current = index;
+      wrapper.style.transform = `translateX(-${100 * current}%)`;
+    }
+
+    document.querySelector(".arrow.left").addEventListener("click", () => showPage(current - 1));
+    document.querySelector(".arrow.right").addEventListener("click", () => showPage(current + 1));
   </script>
 </body>
 
