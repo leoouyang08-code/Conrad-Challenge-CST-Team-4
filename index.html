@@ -149,8 +149,23 @@
     .team-page img {
       width: 100%;
       height: auto;
+      display: none;
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+    .team-photo-wrapper {
+      width: 100%;
+      overflow: hidden;
       border-radius: 12px;
-      display: block;
+    }
+
+    .team-photo {
+      display: none;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
     }
 
     .member {
@@ -272,7 +287,7 @@
               <div class="avatar"><img src="Chase2.jpg" /></div>
               <h3>Chase Li</h3>
               <p class="role">Concept Developer</p>
-              <p>Compared our innovation to those that already exist and helped steer it in the right direction.</p>
+              <p>Compared our innovation to those that already exist and helped move it in the right direction.</p>
             </article>
             <article class="member">
               <div class="avatar"><img src="Lucas2.jpg" /></div>
@@ -287,7 +302,7 @@
               <p>Thought of innumerable ideas that the team would use in the innovation</p>
             </article>
             <article class="member">
-              <div class="avatar"><img src="image.png" /></div>
+              <div class="avatar"><img src="link" /></div>
               <h3>Leo Ouyang</h3>
               <p class="role">Concept Developer, Website Designer</p>
               <p>Helped with ideation and built the website.</p>
@@ -295,7 +310,7 @@
           </div>
 
           <div class="team-page">
-            <img src="Team Photo 2.png" alt="Our Team" />
+            <img src="team_photo.jpg" alt="Our Team" />
           </div>
         </div>
         <button class="arrow right">&#8594;</button>
@@ -312,10 +327,10 @@
         ).appendChild(section);
     });
     document.querySelectorAll("section h2, section article").forEach(el => el.classList.add("scroll"));
-    const observer = new IntersectionObserver(
+    let observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          const el = entry.target;
+          let el = entry.target;
           el.classList.remove("scroll-top", "scroll-bottom");
           el.classList.add(window.scrollY > (el.dataset.lastScroll || 0) ? "scroll-bottom" : "scroll-top");
           el.dataset.lastScroll = window.scrollY;
@@ -326,19 +341,35 @@
     );
     document.querySelectorAll(".scroll").forEach(el => observer.observe(el));
 
-    const wrapper = document.querySelector(".team-wrapper");
-    const pages = document.querySelectorAll(".team-page");
+    let wrapper = document.querySelector(".team-wrapper");
+    let pages = document.querySelectorAll(".team-page");
     let current = 0;
+    let leftArrow = document.querySelector(".arrow.left");
+    let rightArrow = document.querySelector(".arrow.right");
 
     function showPage(index) {
-      if (index < 0) index = pages.length - 1;
-      if (index >= pages.length) index = 0;
+      if (index < 0) index = 0;
+      if (index >= pages.length) index = pages.length - 1;
       current = index;
       wrapper.style.transform = `translateX(-${100 * current}%)`;
+
+      pages.forEach((page, i) => {
+        let photo = page.querySelector("img");
+        if (photo) photo.style.display = i === current ? "block" : "none";
+      });
+
+      leftArrow.style.display = current === 0 ? "none" : "block";
+      rightArrow.style.display = current === pages.length - 1 ? "none" : "block";
     }
 
-    document.querySelector(".arrow.left").addEventListener("click", () => showPage(current - 1));
-    document.querySelector(".arrow.right").addEventListener("click", () => showPage(current + 1));
+    leftArrow.addEventListener("click", () => showPage(current - 1));
+    rightArrow.addEventListener("click", () => showPage(current + 1));
+
+    pages.forEach((page, i) => {
+      let photo = page.querySelector("img");
+      if (photo) photo.style.display = "none";
+    });
+    showPage(0);
   </script>
 </body>
 
